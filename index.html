@@ -103,11 +103,21 @@ nav.scrolled .nav-inner{padding:1rem 2.5rem}
 .hero-right-img::after{content:'';position:absolute;width:350px;height:350px;border-radius:50%;border:1px solid rgba(74,46,26,.1);top:50%;left:50%;transform:translate(-50%,-50%);animation:ringPulse 4s ease-in-out infinite .5s}
 @keyframes ringPulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.03)}}
 
-.hero-right-center{position:relative;z-index:2;text-align:center}
+.hero-right-center{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:2rem}
 .hero-main-icon{display:block;animation:floatHero 4s ease-in-out infinite;filter:drop-shadow(0 20px 40px rgba(74,46,26,.15))}
-.hero-main-icon svg{width:120px;height:120px;color:var(--mocha)}
+.hero-main-icon svg{width:100px;height:100px;color:var(--mocha)}
 @keyframes floatHero{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-10px) rotate(2deg)}75%{transform:translateY(-14px) rotate(-2deg)}50%{transform:translateY(-16px)}}
-.hero-right-tag{font-size:.65rem;letter-spacing:.5em;text-transform:uppercase;color:var(--brown);margin-top:1.5rem;display:block;font-weight:500}
+.hero-right-tag{font-size:.65rem;letter-spacing:.5em;text-transform:uppercase;color:var(--brown);display:block;font-weight:500}
+
+/* Hero service pills */
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;max-width:320px;margin-top:.5rem}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem 1rem;background:rgba(255,255,255,.45);backdrop-filter:blur(8px);border:1px solid rgba(74,46,26,.08);border-radius:20px;font-size:.7rem;font-weight:400;color:var(--brown);letter-spacing:.02em;transition:all .3s}
+.hero-pill:hover{background:rgba(255,255,255,.7);border-color:var(--taupe)}
+.hero-pill svg{width:16px;height:16px;opacity:.6}
+
+/* Third decorative ring */
+.hero-ring-3{position:absolute;width:220px;height:220px;border-radius:50%;border:1px dashed rgba(74,46,26,.06);top:50%;left:50%;transform:translate(-50%,-50%);animation:ringRotate 20s linear infinite}
+@keyframes ringRotate{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
 
 /* Floating mini icons */
 .hero-float{position:absolute;opacity:.35;animation:miniFloat 5s ease-in-out infinite}
@@ -142,7 +152,7 @@ nav.scrolled .nav-inner{padding:1rem 2.5rem}
 
 /* BTNS */
 .btn{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;padding:1rem 2rem;transition:all .3s;font-family:var(--font-body);font-weight:500;display:inline-flex;align-items:center;gap:.6rem;border-radius:2px;border:none}
-.btn-dark{background:var(--mocha);color:var(--cream)}
+.btn-dark{background:var(--mocha);color:var(--cream);padding:1.1rem 2.5rem}
 .btn-dark:hover{background:var(--brown);transform:translateY(-2px);box-shadow:0 8px 25px rgba(74,46,26,.2)}
 .btn-light{background:transparent;color:var(--mocha);border:1px solid var(--taupe)}
 .btn-light:hover{background:var(--mocha);color:var(--cream);border-color:var(--mocha);transform:translateY(-2px)}
@@ -176,16 +186,16 @@ nav.scrolled .nav-inner{padding:1rem 2.5rem}
 /* SERVICES */
 .services-section{background:var(--cream)}
 .services-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem}
-.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.srv-card{background:var(--bg);padding:2.5rem 2rem 2rem;border:1px solid var(--line);position:relative;overflow:hidden;transition:all .4s;border-radius:4px;display:flex;flex-direction:column}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.srv-card{background:var(--bg);padding:2.2rem 2.5rem;border:1px solid var(--line);position:relative;overflow:hidden;transition:all .4s;border-radius:6px;display:grid;grid-template-columns:56px 1fr;grid-template-rows:auto 1fr auto;gap:0 1.5rem;align-items:start}
 .srv-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--taupe),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s}
-.srv-card:hover{border-color:var(--taupe);transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.srv-card:hover{border-color:var(--taupe);transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 .srv-card:hover::before{transform:scaleX(1)}
-.srv-icon{width:48px;height:48px;margin-bottom:1.5rem;color:var(--brown);transition:transform .3s}
+.srv-icon{width:48px;height:48px;color:var(--brown);transition:transform .3s;grid-row:1/3}
 .srv-card:hover .srv-icon{transform:scale(1.1) rotate(-5deg)}
-.srv-title{font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--mocha);margin-bottom:.7rem;line-height:1.2}
-.srv-desc{font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.8;flex:1}
-.srv-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--line)}
+.srv-title{font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--mocha);margin-bottom:.4rem;line-height:1.2}
+.srv-desc{font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.8;grid-column:1/-1}
+.srv-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line);grid-column:1/-1}
 .srv-price{font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--mocha)}
 .srv-price span{font-size:.7rem;font-weight:300;color:var(--muted);display:block;font-family:var(--font-body)}
 .srv-link{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:.4rem;font-weight:500}
@@ -200,8 +210,10 @@ nav.scrolled .nav-inner{padding:1rem 2.5rem}
 .why-item:hover{background:var(--bg2)}
 .why-item:nth-child(2n){border-right:none}
 .why-item:nth-last-child(-n+2){border-bottom:none}
-.why-num{font-family:var(--font-heading);font-size:2.5rem;font-weight:400;color:var(--blush);line-height:1;flex-shrink:0;min-width:40px;transition:color .3s}
+.why-num{font-family:var(--font-heading);font-size:2.5rem;font-weight:400;color:var(--blush);line-height:1;flex-shrink:0;min-width:44px;transition:color .3s;position:relative}
 .why-item:hover .why-num{color:var(--taupe)}
+.why-ico{display:block;width:28px;height:28px;color:var(--taupe);opacity:.5;margin-bottom:.4rem;transition:opacity .3s}
+.why-item:hover .why-ico{opacity:.8}
 .why-content{}
 .why-title{font-family:var(--font-heading);font-size:1.15rem;font-weight:600;color:var(--mocha);margin-bottom:.5rem}
 .why-text{font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.8}
@@ -243,10 +255,10 @@ nav.scrolled .nav-inner{padding:1rem 2.5rem}
 /* TESTIMONIALS */
 .testi-section{background:var(--bg)}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:5rem}
-.testi-card{background:var(--cream);padding:2.5rem;border:1px solid var(--line);transition:all .4s;position:relative;border-radius:4px}
-.testi-card:nth-child(2){transform:translateY(-1rem)}
-.testi-card:hover{border-color:var(--taupe);box-shadow:var(--shadow-md);transform:translateY(-4px)}
-.testi-card:nth-child(2):hover{transform:translateY(calc(-1rem - 4px))}
+.testi-card{background:var(--cream);padding:2.5rem;border:1px solid var(--line);transition:all .4s;position:relative;border-radius:6px}
+.testi-card:nth-child(2){transform:translateY(-1.5rem);border-color:var(--taupe);box-shadow:var(--shadow-sm)}
+.testi-card:hover{border-color:var(--taupe);box-shadow:var(--shadow-md);transform:translateY(-6px)}
+.testi-card:nth-child(2):hover{transform:translateY(calc(-1.5rem - 6px));box-shadow:var(--shadow-lg)}
 .testi-stars{display:flex;gap:.3rem;margin-bottom:1.2rem}
 .testi-star{width:16px;height:16px;color:var(--gold)}
 .testi-text{font-family:var(--font-heading);font-style:italic;font-size:1.05rem;color:var(--brown);line-height:1.8;margin-bottom:1.5rem;font-weight:400}
@@ -346,6 +358,8 @@ footer{background:var(--mocha);padding:4rem 2rem 3rem}
   .hero-right-img{opacity:.6}
   .hero-float{display:none}
   .hero-right-center{display:none}
+  .hero-ring-3{display:none}
+  .hero-pills{display:none}
 
   /* Mobile hero icon above title */
   .hero-left::before{
@@ -390,11 +404,11 @@ footer{background:var(--mocha);padding:4rem 2rem 3rem}
   /* SERVICES mobile */
   .services-header{margin-bottom:2.5rem;gap:1.5rem}
   .services-grid{grid-template-columns:1fr;gap:1rem}
-  .srv-card{padding:1.8rem 1.5rem 1.5rem;flex-direction:row;flex-wrap:wrap;gap:.2rem}
-  .srv-icon{width:36px;height:36px;margin-bottom:0;margin-right:.8rem}
+  .srv-card{display:flex;flex-direction:row;flex-wrap:wrap;gap:.2rem;padding:1.8rem 1.5rem 1.5rem;grid-template-columns:none}
+  .srv-icon{width:36px;height:36px;margin-bottom:0;margin-right:.8rem;grid-row:auto}
   .srv-title{flex:1;min-width:150px;font-size:1.15rem;margin-bottom:0;display:flex;align-items:center}
-  .srv-desc{width:100%;margin-top:.6rem}
-  .srv-footer{width:100%}
+  .srv-desc{width:100%;margin-top:.6rem;grid-column:auto}
+  .srv-footer{width:100%;grid-column:auto}
 
   /* WHY US mobile */
   .why-grid{grid-template-columns:1fr;margin-top:2.5rem;border:none;border-radius:0;gap:.8rem}
@@ -429,7 +443,7 @@ footer{background:var(--mocha);padding:4rem 2rem 3rem}
   /* TESTIMONIALS mobile */
   .testi-grid{grid-template-columns:1fr;gap:1rem;margin-top:2.5rem}
   .testi-card{padding:1.8rem 1.5rem}
-  .testi-card:nth-child(2){transform:none}
+  .testi-card:nth-child(2){transform:none;border-color:var(--line);box-shadow:none}
   .testi-card:nth-child(2):hover{transform:translateY(-4px)}
   .testi-text{font-size:.95rem}
 
@@ -536,6 +550,37 @@ footer{background:var(--mocha);padding:4rem 2rem 3rem}
   <symbol id="ico-star" viewBox="0 0 20 20">
     <path d="M10 1.5l2.47 5.01 5.53.8-4 3.9.94 5.49L10 14.26 5.06 16.7 6 11.21l-4-3.9 5.53-.8z" fill="currentColor" stroke="none"/>
   </symbol>
+
+  <!-- Award / Certificate -->
+  <symbol id="ico-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/>
+  </symbol>
+
+  <!-- Diamond / Premium -->
+  <symbol id="ico-diamond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 3h12l4 7-10 11L2 10z"/><path d="M2 10h20"/><path d="M12 21L8 10l4-7 4 7z" opacity=".3"/>
+  </symbol>
+
+  <!-- Clean / Sanitize -->
+  <symbol id="ico-clean" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M4.93 19.07l2.83-2.83M12 18v4M16.24 16.24l2.83 2.83M18 12h4M16.24 7.76l2.83-2.83"/>
+    <circle cx="12" cy="12" r="3"/>
+  </symbol>
+
+  <!-- Heart / Cozy -->
+  <symbol id="ico-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>
+  </symbol>
+
+  <!-- Clock / Lasting -->
+  <symbol id="ico-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+  </symbol>
+
+  <!-- Tag / Price -->
+  <symbol id="ico-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>
+  </symbol>
 </svg>
 
 <!-- PAGE LOADER -->
@@ -578,7 +623,7 @@ footer{background:var(--mocha);padding:4rem 2rem 3rem}
   <div class="hero-left">
     <div class="hero-kicker">Студия красоты · Бузулук</div>
     <h1 class="hero-title">
-      <span>Твоя красота —</span>
+      <span>Твоя красота&nbsp;—</span>
       <em>наша история</em>
       <strong>Beauty Story</strong>
     </h1>
@@ -603,9 +648,16 @@ footer{background:var(--mocha);padding:4rem 2rem 3rem}
       <span class="hero-float"><svg><use href="#ico-nail"/></svg></span>
       <span class="hero-float"><svg><use href="#ico-flower"/></svg></span>
       <span class="hero-float"><svg><use href="#ico-leaf"/></svg></span>
+      <div class="hero-ring-3"></div>
       <div class="hero-right-center">
         <span class="hero-main-icon"><svg><use href="#ico-nail"/></svg></span>
         <span class="hero-right-tag">Твоя красота · Твоя история</span>
+        <div class="hero-pills">
+          <span class="hero-pill"><svg><use href="#ico-nail"/></svg> Маникюр</span>
+          <span class="hero-pill"><svg><use href="#ico-lash"/></svg> Ресницы</span>
+          <span class="hero-pill"><svg><use href="#ico-pedicure"/></svg> Педикюр</span>
+          <span class="hero-pill"><svg><use href="#ico-brow"/></svg> Брови</span>
+        </div>
       </div>
     </div>
   </div>
@@ -729,42 +781,42 @@ footer{background:var(--mocha);padding:4rem 2rem 3rem}
     </div>
     <div class="why-grid">
       <div class="why-item reveal" style="transition-delay:.05s">
-        <div class="why-num">01</div>
+        <div class="why-num"><svg class="why-ico"><use href="#ico-award"/></svg>01</div>
         <div class="why-content">
           <div class="why-title">Сертифицированные мастера</div>
           <div class="why-text">Регулярно повышаем квалификацию и следим за трендами. Каждый мастер — профессионал своего дела.</div>
         </div>
       </div>
       <div class="why-item reveal" style="transition-delay:.1s">
-        <div class="why-num">02</div>
+        <div class="why-num"><svg class="why-ico"><use href="#ico-diamond"/></svg>02</div>
         <div class="why-content">
           <div class="why-title">Только премиальные материалы</div>
           <div class="why-text">Используем сертифицированные материалы и оборудование. Ваше здоровье — наш приоритет.</div>
         </div>
       </div>
       <div class="why-item reveal" style="transition-delay:.15s">
-        <div class="why-num">03</div>
+        <div class="why-num"><svg class="why-ico"><use href="#ico-clean"/></svg>03</div>
         <div class="why-content">
           <div class="why-title">Стерильность и безопасность</div>
           <div class="why-text">Строгое соблюдение правил дезинфекции. Ведём журналы и тесты контроля — ваша безопасность прежде всего.</div>
         </div>
       </div>
       <div class="why-item reveal" style="transition-delay:.2s">
-        <div class="why-num">04</div>
+        <div class="why-num"><svg class="why-ico"><use href="#ico-heart"/></svg>04</div>
         <div class="why-content">
           <div class="why-title">Уютная атмосфера</div>
           <div class="why-text">В студии очень уютно и спокойно. Угощаем вкусным чаем, кофе и вкусняшками.</div>
         </div>
       </div>
       <div class="why-item reveal" style="transition-delay:.25s">
-        <div class="why-num">05</div>
+        <div class="why-num"><svg class="why-ico"><use href="#ico-clock"/></svg>05</div>
         <div class="why-content">
           <div class="why-title">Результат, который держится</div>
           <div class="why-text">95% клиентов отмечают, как долго держится покрытие и носятся реснички. Качество, которое говорит само за себя.</div>
         </div>
       </div>
       <div class="why-item reveal" style="transition-delay:.3s">
-        <div class="why-num">06</div>
+        <div class="why-num"><svg class="why-ico"><use href="#ico-tag"/></svg>06</div>
         <div class="why-content">
           <div class="why-title">Привлекательные цены</div>
           <div class="why-text">Отличное качество по доступным ценам. Скидка 15% на первое посещение — убедитесь сами.</div>
